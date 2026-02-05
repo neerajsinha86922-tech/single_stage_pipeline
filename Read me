@@ -1,0 +1,18 @@
+
+
+This repository implements a single-stage pipeline register using
+a standard valid/ready handshake in SystemVerilog.
+
+  Features
+- Fully synthesizable
+- Handles backpressure correctly
+- No data loss or duplication
+- Clean reset to empty state
+
+  Handshake Rules
+- Accept data when: in_valid && in_ready
+- Output data when: out_valid && out_ready
+
+  Key Equations
+- out_valid = full
+- in_ready  = !full || out_ready
